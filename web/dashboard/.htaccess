@@ -1,0 +1,35 @@
+ErrorDocument 500 /notauthorized
+ErrorDocument 404 /notauthorized
+ErrorDocument 401 /notauthorized
+ErrorDocument 403 /notauthorized
+
+RewriteEngine on
+#disabling directory browesing
+Options -Indexes
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+#RewriteRule ^ index.php [QSA,L]
+RewriteRule ^([a-zA-Z-]+)$ index.php?page=$1
+RewriteRule ^([a-zA-Z-]+)/$ index.php?page=$1
+
+RewriteRule ^([a-zA-Z-]+)/([a-zA-Z0-9_-]+)$ index.php?page=$1&&type=$2
+RewriteRule ^([a-zA-Z-]+)/([a-zA-Z0-9_-]+)/$ index.php?page=$1&&type=$2
+
+RewriteRule ^([a-zA-Z-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/$ index.php?page=$1&&type=$2&&method=$3
+RewriteRule ^([a-zA-Z-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ index.php?page=$1&&type=$2&&method=$3
+
+RewriteRule ^([a-zA-Z-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/$ index.php?page=$1&type=$2&method=$3&&app=$4
+RewriteRule ^([a-zA-Z-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ index.php?page=$1&type=$2&method=$3&&app=$4
+
+RewriteRule ^([a-zA-Z-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/$ index.php?page=$1&&type=$2&&method=$3&&app=$4&&id=$5
+RewriteRule ^([a-zA-Z-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ index.php?page=$1&&type=$2&&method=$3&&app=$4&&id=$5
+
+RewriteRule ^([a-zA-Z-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/$ index.php?page=$1&&type=$2&&method=$3&&app=$4&&id=$5&&extra=$6
+RewriteRule ^([a-zA-Z-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ index.php?page=$1&&type=$2&&method=$3&&app=$4&&id=$5&&extra=$6
+
+
+#authorize/page/type/method/app
+#authorize/location/add/0
+#authorize/location/edit/1232423
+#authorize/location/delete/1232423
+
