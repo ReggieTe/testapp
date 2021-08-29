@@ -110,7 +110,6 @@ public function setUser() {
         $result = $this->client->select("select * from $this->table WHERE email ='$this->email' LIMIT 1");
         foreach ($result as $key => $value) {
             $this->id = $value["id"];
-            $this->username = $value["username"];
             $this->firstname = $value["firstname"];
             $this->email = $value["email"];
             $this->salt = $value["salt"];

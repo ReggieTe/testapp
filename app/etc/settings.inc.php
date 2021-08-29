@@ -2,7 +2,7 @@
 define('SITE_MODE', "prod"); 
 define('SITE_PATH', "app");
 define('SITE_VERSION', "1");
-define('SITE_NAME', "TestApp");
+define('SITE_NAME', "GVI App");
 define('SITE_NUMBER', "+27 (0) 61054 9027");
 define('EWALLET_NUMBER',"0610549027");
 define('PAYPAL_EMAIL',"tembachakoregis@gmail.co.za");
@@ -14,17 +14,27 @@ define('SITE_FACEBOOK',"");
 define('SITE_LINKEDIN',"");
 define('SITE_TWITTER',"");
 //Server
-define('URL', "http://localhost/testapp/");
+define('URL', "http://localhost/gviApp/");
 define('SUBDIR',"/testapp");   
 define("SERVER_DCUMENT_ROOT",$_SERVER['DOCUMENT_ROOT']);
 define('RELATIVEFILEPATH',$_SERVER['DOCUMENT_ROOT']."/"); 
 define('USER_DEFAULT_IMAGE',"public/assets/image/user.png");
 //local storage 
 define('DB_HOST',"localhost");                        
-define('DB_USER',"root");              
-define('DB_PASS',"");              
-define('DB_NAME',"test"); 
-//GOOGLE
+define('DB_USER',"root");                  
+define('DB_PASS',"");                     
+define('DB_NAME',"testapp"); 
 
-define("LANGUAGE",array("isiZulu"=>"isiZulu","isiXhosa"=>"isiXhosa","Afrikaans"=>"Afrikaans","English"=>"English","Sesotho"=>"Sesotho","Setswana"=>"Setswana","Xitsonga"=>"Xitsonga","siSwati"=>"siSwati","Tshivenḓa"=>"Tshivenḓa","isiNdebel"=>"isiNdebel"));
-define("INTERESTS",array("Volunteering"=>"Volunteering","Blogging"=>"Blogging","Sports"=>"Sports","Art"=>"Art","Gaming"=>"Gaming","Traveling"=>"Traveling","Music"=>"Music","Cooking"=>"Cooking","Collecting"=>"Collecting","Reading"=>"Reading"));
+define("PROJECTS",array(
+"wildlife-conservation"=>"Wildlife Conservation",
+"womens-empowerment"=>"Women’s empowerment",
+"health-care"=>"Health care",
+"sports-and-surfing"=>"Sports and surfing",
+));
+
+$hoursSpent=array();
+for($i=1;$i<24;$i++){
+    $hoursSpent[$i]="$i";
+}
+
+define("HOURSPENT",$hoursSpent);

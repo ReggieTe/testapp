@@ -41,22 +41,11 @@ class User {
         isset($this->id)?$this->setUser():"";  
     }
 
-    public function delete() {
-        $count=0;
-        $tables=array(
-            array("table"=>"user","key"=>'id'),
-            array("table"=>"user_person","key"=>'addedby'),
-        );
-        foreach ($tables as $key => $value) { 
-            $deleteObj = new Database($value['table']);        
-           if($deleteObj->delete("{$value['key']}='$this->id'"))
-           {
-             $count++; 
-           }
-        }
-        return true;
-    }
 
+    public function getAll($keys="*") {      
+        $result = $this->client->select("select $keys from $this->table");        
+        return count($result)!= 0 ? $result:array();
+    }
      
 
     public function setUser() {  
@@ -64,8 +53,6 @@ class User {
         $result = $this->client->select("select * from $this->table WHERE id='$this->id' LIMIT 1");        
         foreach ($result as $key => $value) {
             $this->id = $value["id"];
-            $this->authId = $value['auth_id'];
-            $this->username = $value["username"];
             $this->firstname = $value["firstname"];
             $this->surname = $value["surname"];           
             $this->email = $value["email"];           
@@ -78,10 +65,8 @@ class User {
         $this->id = $this->text->keyGen();
        $dataUser = array(
             "id" => $this->id ,
-            "auth_id"=>$this->text->keyGen(),
-            "username" => "",
-            "firstname" => "",
-            "surname" => "",       
+            "firstname" => $userValue['firstname'],
+            "surname" => $userValue['surname'],       
             "email" => $userValue['email'],
             "password" => $userValue['password'],
             "salt" => $userValue['salt'],            

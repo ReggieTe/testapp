@@ -1,19 +1,20 @@
-# Test App
-
-A web-based system where a user can log in and out of the system to manage people via CRUD operations.
+# GVI App
+A web-based system where a user can log in and out of the system to manage timesheets via CRUD operations.
 
 ## Description
-Herewith the fields that need to be managed: (all fields are required)
-* Name
-* Surname
-* South African Id Number
-* Mobile Number
-* Email Address
-* Birth Date
-* Language (Single Selection)
-* Interests (Multiple Selection)
-
-On capturing a person: An email needs to be sent out to the person captured informing them that they’ve been captured on the system.
+### User Stories
+### Login
+* Thevolunteer should be able to login with their email address and password.
+### Add new record
+ The volunteer must be able to enter a new record that contains the following information:
+* Project (dropdownlistofavailableprojects)
+* Date
+* Descriptionof task(s) they werebusy with (optional)
+* Timespent (inhours, withthe minimum being 1hour)
+### View dashboard of all volunteers’ time totals for the current month
+* The volunteer should be allowed to view a dashboard that contains a list of all the volunteers’ total times for the current month.
+* The Gravatar image of each volunteer should appear next to their name
+### Logout
 
 ## Getting Started
 
@@ -24,15 +25,30 @@ On capturing a person: An email needs to be sent out to the person captured info
 * Apache or Nginx
 * HTML, CSS and JavaScript 
 
-### Installing
+## Installing
 
+### Project environment variables
+* path : app/etc/settings.inc.php
+* change URL to your site url
+* define('URL', "your_project_url");
+* Examples
+* xampp(windows):http://localhost/gvipp/
+* xampp(ubuntu): http://gvipp.local/
+
+### Add database settings
+* define('DB_HOST',"localhost");                        
+* define('DB_USER',"your_db_username");              
+* define('DB_PASS',"your_db_password");              
+* define('DB_NAME',"your_db_name"); 
+
+### Importing database
+* create new database your_db_name
+* path: db/test.sql
+* import db above into your_db_name
 * extract the contents on your localhost
 * import the db available
 
-### Testing 
 
-    Email : test@rtembachako.com
-    Password : 1234567890
 
 ## Help
 Contact me on tembachakoregis@gmail.com

@@ -1,8 +1,0 @@
-<div style="position:relative" v-bind:class="{'open':openSuggestion}">
-    <input class="form-control" type="text" v-model="selection"/>
-    <ul class="dropdown-menu" style="width:100%">
-        <li v-for="suggestion in matches">
-            <a href="#">{{ suggestion }}</a>
-        </li>
-    </ul>
-</div>

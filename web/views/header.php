@@ -12,20 +12,17 @@ $contentManager = new ContentManager();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title><?=SITE_NAME?> | <?=$contentManager->getPageName()?></title>
-		<meta name="description" content="<?=$contentManager->getPageDescription()?>">
-		<meta name="keywords" content="<?=$contentManager->getPageKeyWords() ?>">
-		<meta name="author" content="<?=SITE_NAME?>">      
-	    <link rel="apple-touch-icon" sizes="76x76" href="<?=URL ?>public/assets/image/user.png">
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  />	
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link href="<?=URL ?>public/assets/frontend/assets/css/app.css" rel="stylesheet" />
-		<link href="<?=URL ?>public/assets/css/app.css" rel="stylesheet" />
-		<link href="<?=URL ?>public/assets/css/sweetalert.css" rel="stylesheet" >
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?=SITE_NAME?> | <?=$contentManager->getPageName()?></title>
+<meta name="description" content="<?=$contentManager->getPageDescription()?>">
+<meta name="keywords" content="<?=$contentManager->getPageKeyWords() ?>">
+<meta name="author" content="<?=SITE_NAME?>">      
+<link rel="apple-touch-icon" sizes="76x76" href="<?=URL ?>public/assets/image/user.png">
+<link href="<?=URL ?>public/assets/css/custom.css" rel="stylesheet"/>
+<link href="<?=URL ?>public/assets/css/bootstrap.css" rel="stylesheet" />
+<link href="<?=URL ?>public/assets/css/sweetalert.css" rel="stylesheet" >
 <body>
 	<div id="page-container" class="">
 		<div id="header" class="header">
@@ -39,7 +36,7 @@ $contentManager = new ContentManager();
 					<div class="header-logo">
 						<a href="<?=URL ?>home">
 							<span class="brand-text">
-								<span class="text-danger"><b>Test</b> </span>App								
+								<span class="text-danger"><b>GVI</b> </span>App								
 							</span>
 						</a>
 					</div>
@@ -61,11 +58,14 @@ $contentManager = new ContentManager();
 										<span class="arrow top"></span>
 									</a>
 									<div class="dropdown-menu">
-											<a class="dropdown-item" href="<?php echo URL; ?>dashboard/home">
-												<i class="fa fa-fw fa-user"></i>Dashboard
+											<a class="dropdown-item" href="<?= URL; ?>dashboard/home">
+												Dashboard
 											</a>
-											<a class="dropdown-item" href="<?php echo URL; ?>logout">
-											<i class="fa fa-fw fa-power-off"></i> Log Out
+											<a class="dropdown-item" href="<?= URL; ?>dashboard/add">
+												Time sheets
+											</a>
+											<a class="dropdown-item" href="<?= URL; ?>logout">
+											 Log Out
 											</a>
 									</div>
 								</li>
